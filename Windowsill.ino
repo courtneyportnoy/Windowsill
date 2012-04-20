@@ -131,7 +131,6 @@ void loop() {
           //check if it is 7am, noon, or 7pm. If so, take, save, and send picture
           if(theNumber == 7 || theNumber == 12 || theNumber == 19) {
             takePicture();
-            savePicture();
             sendPicture();
           }
         }
@@ -278,7 +277,7 @@ void sendPicture() {
   // re-open the file for reading:
   myFile = SD.open("IMAGE00.JPG");
   if (myFile) {
-    Serial.println("test.txt:");
+    Serial.println("IMAGE00.JPG:");
 
     // read from the file until there's nothing else in it:
     while (myFile.available()) {
